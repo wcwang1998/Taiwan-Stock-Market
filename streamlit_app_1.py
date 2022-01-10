@@ -588,4 +588,6 @@ def update_tw_index_data():
 # --------------------------------- Update data --------------------------------- #
 
 if update:
+    st.legacy_caching.caching.clear_cache()
     update_tw_index_data()
+
