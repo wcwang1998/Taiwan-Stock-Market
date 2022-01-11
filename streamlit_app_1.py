@@ -17,7 +17,7 @@ import yfinance as yf
 finlab.login(api_token="vdrky4XWtsiNiSybGA8xwZVNH7xVzDmsYEUyRSGkAyvYqDuUeKWWPSJxE2YnwHeJ#free")
 
 st.set_page_config(
-    page_title="Jack's Dashboard",
+    page_title="Taiwan Stock Market Dashboard",
     page_icon=r"https://upload.cc/i1/2021/12/31/RtxJjG.png",
     layout="wide",
     # initial_sidebar_state="expanded",
