@@ -36,7 +36,11 @@ update = a2.button("Update Data", help='Click to update data')
 
 # ---------------------------------- Index --------------------------------- #
 
-def update_tw_index_data():
+# def update_tw_index_data():
+if update:
+    st.experimental_memo.clear()
+    st.experimental_singleton.clear()
+    
     with st.spinner('Updating Data...'):
         # Index
         @st.experimental_memo
@@ -587,7 +591,8 @@ def update_tw_index_data():
 
 # --------------------------------- Update data --------------------------------- #
 
-if update:
-    st.legacy_caching.caching.clear_cache()
-    update_tw_index_data()
+# if update:
+#     st.experimental_memo.clear()
+#     st.experimental_singleton.clear()
+#     update_tw_index_data()
 
