@@ -34,7 +34,8 @@ a2.title("Taiwan Stock Market")
 a2.markdown(
     """
     <a href="https://share.streamlit.io/wcwang1998/taiwan-stock-market---index/main/streamlit_app_1.py">Index</a>
-    ｜<a href="https://yahoo.com.tw">Industries</a>
+    ｜<a href="https://share.streamlit.io/wcwang1998/taiwan-stock-market/main/streamlit_app_2.py">Industries</a>
+    ｜<a href="https://yahoo.com.tw">Stocks</a>
     ｜Created by 
     <a href="https://www.linkedin.com/in/weichieh1998/">Jack Wang</a>
     """, 

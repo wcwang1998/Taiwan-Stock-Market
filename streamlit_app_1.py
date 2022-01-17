@@ -31,7 +31,16 @@ st.set_page_config(
 a1, a2 = st.columns([1,8])
 a1.image(r"https://upload.cc/i1/2021/12/31/ePSKUF.png", use_column_width=True, output_format="auto")
 a2.title("Taiwan Stock Market")
-a2.markdown(" Created by Jack Wang｜Linkedin: https://www.linkedin.com/in/weichieh1998/")
+a2.markdown(
+    """
+    <a href="https://share.streamlit.io/wcwang1998/taiwan-stock-market---index/main/streamlit_app_1.py">Index</a>
+    ｜<a href="https://share.streamlit.io/wcwang1998/taiwan-stock-market/main/streamlit_app_2.py">Industries</a>
+    ｜<a href="https://yahoo.com.tw">Stocks</a>
+    ｜Created by 
+    <a href="https://www.linkedin.com/in/weichieh1998/">Jack Wang</a>
+    """, 
+    unsafe_allow_html=True,
+    )
 update = a2.button("Update Data", help='Click to update data')
 
 # ---------------------------------- Index --------------------------------- #
