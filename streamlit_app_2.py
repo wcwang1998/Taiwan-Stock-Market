@@ -47,13 +47,13 @@ update = a2.button("Update Data", help='Click to update data')
 
 # def tw_industries():
 if update:
-    st.experimental_memo.clear()
-    st.experimental_singleton.clear()
+    st.cache_data.clear()
+    st.cache_resource.clear()
 
     with st.spinner('Updating Data...'):
 
         # Turnover Ratio
-        @st.experimental_singleton
+        @st.cache_resource
         def turnover_ratio():
             # 建構爬取網站及參數
             url = 'https://pscnetsecrwd.moneydj.com/b2brwdCommon/jsondata/c6/fb/f2/twstockdata.xdjjson?x=afterhours-market0003-1&revision=2018_07_31_1'
@@ -150,7 +150,7 @@ if update:
         turnover_ratio_fig = turnover_ratio()
         st.plotly_chart(turnover_ratio_fig, use_container_width=True)
 
-        @st.experimental_singleton
+        @st.cache_resource
         def industries_index():
             # 建構爬取網站及參數
             url = 'http://stock.pchome.com.tw/market/sto0'
@@ -239,7 +239,7 @@ if update:
         industries_index_fig = industries_index()
         st.plotly_chart(industries_index_fig, use_container_width=True)
 
-        @st.experimental_singleton
+        @st.cache_resource
         def net_buy_sell(url, title):
             url = url
             header = {
