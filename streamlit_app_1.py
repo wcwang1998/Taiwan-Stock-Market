@@ -135,7 +135,7 @@ if update:
         b4.metric(label="Decrease", value=tw_down, delta=tw_down_pct, delta_color="normal")
         
         # TAIEX figure
-        @st.experimental_singleton
+        @st.cache_resource
         def tw_figure():
             
             # Define date
