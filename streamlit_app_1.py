@@ -47,12 +47,12 @@ update = a2.button("Update Data", help='Click to update data')
 
 # def update_tw_index_data():
 if update:
-    st.experimental_memo.clear()
-    st.experimental_singleton.clear()
+    st.cache_data.clear()
+    st.cache_resource.clear()
     
     with st.spinner('Updating Data...'):
         # Index
-        @st.experimental_memo
+        @st.cache_data
         def tw_index():
 
             tw_close = data.get('taiex_total_index:收盤指數') #抓取加權收盤指數
@@ -71,7 +71,7 @@ if update:
         tw_change = tw_index()[1]
         
         # OTC
-        @st.experimental_memo
+        @st.cache_data
         def tw_OTC():
 
             tw_otc = data.get('stock_index_price:收盤指數')
@@ -92,7 +92,7 @@ if update:
         today_date = today_date.strftime('%Y-%m-%d')
 
         # up&down
-        @st.experimental_memo
+        @st.cache_data
         def tw_up_down():
 
             #建構爬取網站及參數
@@ -229,7 +229,7 @@ if update:
         st.plotly_chart(taiex_plot, use_container_width=True)
 
         # institutional investor
-        @st.experimental_singleton
+        @st.cache_resource
         def institutional_investor():
 
             # Define date
@@ -316,7 +316,7 @@ if update:
         st.plotly_chart(institutional_investor_plot, use_container_width=True)
 
         # buy on margin & short sell
-        @st.experimental_singleton
+        @st.cache_resource
         def margin_short():
             # get data
             margin_short = data.get('margin_balance:融資券總餘額')
@@ -428,7 +428,7 @@ if update:
         tw_close = tw_index()[2]
         tw_otc = tw_OTC()[2]
 
-        @st.experimental_singleton
+        @st.cache_resource
         def taiex_vs_otc():
             y1 = tw_close['pct_change'].iloc[-250:].apply('{:.2%}'.format)
             y2 = tw_otc['pct_change'].iloc[-250:].apply('{:.2%}'.format)
@@ -492,7 +492,7 @@ if update:
         st.plotly_chart(taiex_vs_otc_plot, use_container_width=True)
 
         # tw_treemap
-        @st.experimental_singleton
+        @st.cache_resource
         def tw_treemap():
             def df_date_filter(df, start=None, end=None):
                 if start:
